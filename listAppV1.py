@@ -15,12 +15,17 @@ def mainProgram():
     while True:
         print("hello, there! Let's work with lists!")
         print("please choose from the following options. Type the number of the choice")
-        choice = input("1. Add to a list, 2. Return a valuea at a list    ")
+        choice = input("""1. Add to a list,
+2. Return a valuea at a list,
+3.Random Search
+4.Quit   """)
         if choice == "1";
            addToList()
         elif choice == "2":
             indexValues()
         elif choice == "3":
+            randomSearch()
+        else:
             break
 
 def addToList():
@@ -29,10 +34,16 @@ def addToList():
     myList.append(int(newIteam))
     #we need to think about errors!
 
+
+def randomSearch ():
+    print("oH, iM sO rAnDoM!!!")
+    print(myList[random.randint(0,  len(myList)-1)])
+
+
 def indexValues():
     print("At what index position do you  want to search?")
     indexPos = input( "Type an index position here:    ")
-    print (myList[int(indexPos)])
+    print(myList[int(indexPos)])
     
 
 
