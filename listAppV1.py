@@ -8,23 +8,29 @@ Program goals:
 6. Add an exit option
 
 """
-
+import random
 myList = []
 def mainProgram():
-    #build our while loop
+    #build our while loop 
     while True:
         print("hello, there! Let's work with lists!")
         print("please choose from the following options. Type the number of the choice")
         choice = input("""1. Add to a list,
 2. Return a valuea at a list,
-3.Random Search
-4.Quit   """)
+3. Add a bunch of numbers!
+4. Random Search
+5. Print list
+6. Quit   """)
         if choice == "1";
            addToList()
         elif choice == "2":
             indexValues()
         elif choice == "3":
+            addABunch()
+        elif choice == "4":
             randomSearch()
+        elif choice == "5"
+            print(myList)
         else:
             break
 
@@ -34,10 +40,24 @@ def addToList():
     myList.append(int(newIteam))
     #we need to think about errors!
 
+def addAvunch():
+    print ("we're going to add a bunch of numbers to your list!")
+    numToAdd = input("how many new integers would you like to add?  ")
+    numRang = input("And how high would you like these numbers to go?  ")
+    for x in range(0,int(numToAdd)):
+        myList.append(random.ranint(0,  int(numrange)))
+    print("Your list is complete!")
+    
+
 
 def randomSearch ():
     print("oH, iM sO rAnDoM!!!")
     print(myList[random.randint(0,  len(myList)-1)])
+
+def linearearch():
+    print("We're going to go through this list one item at a time!")
+    
+        
 
 
 def indexValues():
