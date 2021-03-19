@@ -19,9 +19,10 @@ def mainProgram():
 2. Return a valuea at a list,
 3. Add a bunch of numbers!
 4. Random Search
-5. Print list
-6. Quit   """)
-        if choice == "1";
+5. Linear seaarch
+6. Print list
+7. Quit   """)
+        if choice == "1":
            addToList()
         elif choice == "2":
             indexValues()
@@ -29,7 +30,9 @@ def mainProgram():
             addABunch()
         elif choice == "4":
             randomSearch()
-        elif choice == "5"
+        elif choice == "5":
+            linearSearch()
+        elif choice == "6":
             print(myList)
         else:
             break
@@ -56,6 +59,10 @@ def randomSearch ():
 
 def linearearch():
     print("We're going to go through this list one item at a time!")
+    searchValue = input(" What are you looking for?  ")
+    for x in range (len(myList)):
+        if myList[x] == int(searchValue):
+            print(" Your itam is at index position {}".format (x))
     
         
 
