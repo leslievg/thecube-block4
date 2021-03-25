@@ -10,6 +10,7 @@ Program goals:
 """
 import random
 myList = []
+unique_list = []
 def mainProgram():
     #build our while loop 
     while True:
@@ -20,7 +21,7 @@ def mainProgram():
 3. Add a bunch of numbers!
 4. Random Search
 5. Linear seaarch
-6. Print list
+6. Sort list
 7. Quit   """)
         if choice == "1":
            addToList()
@@ -33,7 +34,7 @@ def mainProgram():
         elif choice == "5":
             linearSearch()
         elif choice == "6":
-            print(myList)
+            sortList(myList)
         else:
             break
 
@@ -50,12 +51,23 @@ def addAvunch():
     for x in range(0,int(numToAdd)):
         myList.append(random.ranint(0,  int(numrange)))
     print("Your list is complete!")
-    
+
+
+def sortList(myList):
+    #"miList" is the ARGUMENT this function takes.
+    for x in myList:
+        if x not in unique_list:
+            unique_list.append(x)
+    unique_list.sort()
+    showMe =  input("Wanna see your new, sorted list?  y/n")
+    if showMe.lower() =="Y":
+        print(unique_list)
 
 
 def randomSearch ():
     print("oH, iM sO rAnDoM!!!")
     print(myList[random.randint(0,  len(myList)-1)])
+
 
 def linearearch():
     print("We're going to go through this list one item at a time!")
@@ -65,8 +77,6 @@ def linearearch():
             print(" Your itam is at index position {}".format (x))
     
         
-
-
 def indexValues():
     print("At what index position do you  want to search?")
     indexPos = input( "Type an index position here:    ")
