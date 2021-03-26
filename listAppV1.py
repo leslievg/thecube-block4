@@ -35,6 +35,8 @@ def mainProgram():
             linearSearch()
         elif choice == "6":
             sortList(myList)
+        elif choice == "7":
+            printlists()
         else:
             break
 
@@ -75,14 +77,37 @@ def linearearch():
     for x in range (len(myList)):
         if myList[x] == int(searchValue):
             print(" Your itam is at index position {}".format (x))
+
+
+def recursiveBinarySearch(unique_list, low, high, x):
+    if high >= low:
+        mid = (high + low)// 2
+        if unique_list[mid] == x:
+            print("Your number is at index position{}".capitalize.format(mid))
+            return mid
+        elif unique_list[mid] > x:
+            return recursiveBinarySearch(unique_list, low, mid-1, x)
+        else:
+            return recursiveBinarySearch(unique_list, mid +1, high, x)
+    else:
+        print("Your number isn't here!")
     
         
 def indexValues():
     print("At what index position do you  want to search?")
     indexPos = input( "Type an index position here:    ")
     print(myList[int(indexPos)])
-    
 
+
+
+def printList ():
+    if len(unique_list)[== 0:
+           print(myList)
+    else:
+        wichOne = input("Wich listdo you want to see? Sorted or un-sorted ?  ")
+        if wichOne.lower() == "sorted"
+             print (unique_list)
+ 
 
 
 if __name__ == "__main__":
