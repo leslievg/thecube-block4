@@ -14,15 +14,16 @@ unique_list = []
 def mainProgram():
     #build our while loop 
     while True:
-        print("hello, there! Let's work with lists!")
-        print("please choose from the following options. Type the number of the choice")
+        print("Hello, there! Let's work with lists!")
+        print("Please choose from the following options. Type the number of the choice")
         choice = input("""1. Add to a list,
 2. Return a valuea at a list,
 3. Add a bunch of numbers!
 4. Random Search
 5. Linear seaarch
 6. Sort list
-7. Quit   """)
+8. Recursive
+9. Quit   """)
         if choice == "1":
            addToList()
         elif choice == "2":
@@ -37,18 +38,21 @@ def mainProgram():
             sortList(myList)
         elif choice == "7":
             printlists()
+        elif choice == "8":
+            searchIteam = input("What are you looking for?   ")
+            recursiveBinarySearch(unique_list, 0, len(unique_list)-1,int(searchItem))
         else:
             break
 
 def addToList():
-    print("adding to a list! Great Choice!")
-    newIteam = input("type an integer here!  ")
+    print("Adding to a list! Great Choice!")
+    newIteam = input("Type an integer here!  ")
     myList.append(int(newIteam))
     #we need to think about errors!
 
 def addAvunch():
     print ("we're going to add a bunch of numbers to your list!")
-    numToAdd = input("how many new integers would you like to add?  ")
+    numToAdd = input("How many new integers would you like to add?  ")
     numRang = input("And how high would you like these numbers to go?  ")
     for x in range(0,int(numToAdd)):
         myList.append(random.ranint(0,  int(numrange)))
@@ -76,7 +80,7 @@ def linearearch():
     searchValue = input(" What are you looking for?  ")
     for x in range (len(myList)):
         if myList[x] == int(searchValue):
-            print(" Your itam is at index position {}".format (x))
+            print(" Your item is at index position {}".format (x))
 
 
 def recursiveBinarySearch(unique_list, low, high, x):
@@ -91,6 +95,24 @@ def recursiveBinarySearch(unique_list, low, high, x):
             return recursiveBinarySearch(unique_list, mid +1, high, x)
     else:
         print("Your number isn't here!")
+
+
+def iterativeBinarySearch(unique_list, X):
+    low = 0
+    high = len(unique_list)-1
+    mid = 0
+
+    while low <= high:
+        mid = (high + low) //2
+
+         if unique_list[mid] < x :
+             low = mid + 1
+        elif unique_list[mid] = x:
+            high = mid -1
+        else :
+             return mid
+        return -1
+             
     
         
 def indexValues():
