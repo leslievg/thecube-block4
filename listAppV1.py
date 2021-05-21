@@ -155,7 +155,7 @@ def iterativeBinarySearch(unique_list, X):
              
     
         
-def indexValues():
+ def indexValues():
     print("At what index position do you  want to search?")
     indexPos = input( "Type an index position here:    ")
     print(myList[int(indexPos)])
